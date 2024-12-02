@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!-- Adicionando o link para o arquivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function validarSenha() {
+            let senha = document.getElementById("senha").value;
+            if (senha.length < 6) {
+                alert("A senha precisa ter pelo menos 6 caracteres!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Bem-vindo ao site!</h1>
+    <form onsubmit="return validarSenha()">
+        <label>Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
